@@ -2,6 +2,7 @@ package sample.service;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import javafx.scene.control.CheckBox;
 import sample.entity.Contract;
 import sample.entity.ContractForVue;
 
@@ -49,6 +50,9 @@ public class ContractService {
             contractForVue.setDateOfLastUpdate(LocalDate.parse(contract.getDateOfLastUpdate(),df));
             contractForVue.setDescription(contract.getDescription());
             contractForVue.setRelevant(LocalDate.now().minusDays(60).isBefore(contractForVue.getDateOfLastUpdate()));
+            CheckBox checkBox = new CheckBox();
+            checkBox.setSelected(contractForVue.getRelevant());
+            contractForVue.setCheckBox(checkBox);
             contractsForVue.add(contractForVue);
         }
 

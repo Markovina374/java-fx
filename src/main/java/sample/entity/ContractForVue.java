@@ -1,5 +1,6 @@
 package sample.entity;
 
+import javafx.scene.control.CheckBox;
 import lombok.Data;
 
 import java.time.LocalDate;
@@ -10,5 +11,6 @@ public class ContractForVue {
     private String description;
     private LocalDate date;
     private LocalDate dateOfLastUpdate;
-    private boolean relevant;
+    private Boolean relevant;
+    private CheckBox checkBox;
 }
